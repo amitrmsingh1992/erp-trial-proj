@@ -1,0 +1,41 @@
+.student-class{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 20%;
+    top: 0%;
+    border-top: 1px solid black;
+    & .main-layout-page{
+        width: 80%;
+        & table{
+            width: 60%;
+            padding: 1% 2%;
+        }
+        & .table-data{
+            width: 94%;
+            border-collapse: collapse;
+            text-align: left;
+            padding-left: 2%;
+            & table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: left;
+            & th, td {
+              text-align: center;
+              border: 1px solid black;
+            }
+            & tr:nth-child(odd) {
+            background-color: #dddddd;
+            }
+            & th {
+                background: lightblue;
+            }
+        }
+        }
+
+        & .pagination{
+            text-align: center;
+        }
+    }
+}

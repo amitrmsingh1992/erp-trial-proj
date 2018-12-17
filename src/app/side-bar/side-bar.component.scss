@@ -1,0 +1,26 @@
+.side-info-bar{
+        width: 20%;
+        height: 100%;
+        background: white;
+        border: 1px solid black;
+    & table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid black;
+        text-align: left;
+        & th{
+            background-color: #ddd;
+        }
+        & th, td {
+            border: 1px solid black;
+        }
+        & td > a {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}
+
+.activeLinkClass{
+    background: lightblue;
+}

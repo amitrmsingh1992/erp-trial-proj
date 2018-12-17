@@ -1,0 +1,54 @@
+.student-class{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 20%;
+    top: 0%;
+    border-top: 1px solid black;
+    & .main-layout-page{
+        width: 80%;
+        & .table-data{
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            & table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid black;
+            text-align: left;
+            & th, td {
+              border: 1px solid black;
+            }
+        }
+        }
+    }
+}
+
+.add-content{
+    position: relative;
+    width: 80%;
+    height: 60%;
+    margin: auto;
+    display: table;
+    & .form-header {
+        font-size: 20px;
+        width: 100%;
+        height: 2%;
+    }
+    & .form-content{
+        width: 100%;
+        height: 100%;
+        & table {
+            border-collapse:separate; 
+            border-spacing: 0 2em;
+            & td{
+                font-size: 1.5em;
+                & input {
+                    height: 1.5em;
+                    margin-left: 2em;
+                }
+            }
+        }
+    }
+
+}

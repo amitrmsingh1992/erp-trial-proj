@@ -1,0 +1,19 @@
+<div class="side-info-bar">
+  <table>
+    <tr>
+      <th>
+        Students
+      </th>
+    </tr>
+    <tr>
+      <td [ngClass]="{'activeLinkClass': addLinkActive}">
+        <a (click)="viewLinkClicked()">-View Students</a>
+      </td>
+    </tr>
+    <tr [ngClass]="{'activeLinkClass': !addLinkActive}">
+      <td>
+        <a (click)="addLinkClicked()">-Add Students</a>
+      </td>
+    </tr>
+  </table>
+</div>

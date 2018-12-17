@@ -1,0 +1,58 @@
+<div class="student-class">
+  <div class="main-layout-page">
+    <div class="add-content">
+      <p class="form-header">
+        {{formTitle}}
+      </p>
+      <hr>
+      <div class="form-content">
+        <table>
+          <tr>
+            <td>Full Name</td>
+            <td><input type="text" name="fname" [(ngModel)]="fname" required></td>
+          </tr>
+          <tr>
+            <td>Date of Birth</td>
+            <td><input type="date" name="dob" [(ngModel)]="dob" required></td>
+          </tr>
+          <tr>
+            <td>School</td>
+            <td>
+              <select  (click)="school = $event.target.value" [value]='Select'>
+                <option [value]="Select" disabled>Select</option>
+                <option [value]="school" *ngFor="let school of tableInfo.school">{{school}}</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Class</td>
+            <td>
+              <select (click)="class = $event.target.value" [value]='Select'>
+              <option [value]="Select"  disabled>Select</option>  
+              <option [value]="classOption" *ngFor="let classOption of tableInfo.class">{{classOption}}</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Division</td>
+            <td><select (click)="division = $event.target.value" [value]='Select'>
+              <option [value]="Select" disabled>Select</option>
+              <option [value]="divisionInfo" *ngFor="let divisionInfo of tableInfo.division">{{divisionInfo}}</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>
+              <input type="radio" name="status" value="Active" [(ngModel)]="status" required><span>Active</span>
+              <input type="radio" name="status" value="inActive" [(ngModel)]="!status" required><span>Inactive</span></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="row"><input type="button" [ngStyle]="{'width': '90%', 'height': '35px', 'font-size': '0.6em'}"
+                value="Save" (click)="onSubmit()"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

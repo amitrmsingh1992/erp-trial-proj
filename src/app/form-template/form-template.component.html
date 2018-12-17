@@ -1,0 +1,20 @@
+<div class="login-form">
+  <p>{{formHeader}}</p>
+  <div class="form-body-class">
+    <div class="email-class">
+      <label>Email ID / Phone Number</label>
+      <input type="text" name="" id="emailId" #emailId>
+    </div>
+    <div class="password-class">
+      <label>Password</label>
+      <input type="password" name="" id="password" #password>
+    </div>
+    <div class="submit-class">
+      <input type="submit" name="" id="submit" (click)="onSubmit(emailId.value, password.value)">
+    </div>
+    <div class="password-retrieve-class" *ngIf="forgetPasswordFlag">
+      <a href="erp/temp/get-password">Forgot Password/Claim Your Account</a>
+    </div>
+  </div>
+</div>
+

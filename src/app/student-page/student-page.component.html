@@ -1,0 +1,60 @@
+<div class="student-class">
+  <div class="main-layout-page">
+    <div>
+      <table>
+        <tr>
+          <td><input type="text" name="fname" placeholder="Name" [(ngModel)]="fname" required></td>
+          <td><input type="text" name="age" placeholder="Age" [(ngModel)]="age" required></td>
+          <td>
+            <select (click)="school = $event.target.value" [value]='Select'>
+              <option [value]="Select" disabled>Select</option>
+              <option [value]="school" *ngFor="let school of tableInfo.school">{{school}}</option>
+            </select>
+          </td>
+          <td>
+            <select (click)="class = $event.target.value" [value]='Select'>
+              <option [value]="Select" disabled>Select</option>
+              <option [value]="classOption" *ngFor="let classOption of tableInfo.class">{{classOption}}</option>
+            </select>
+          </td>
+          <td><select (click)="division = $event.target.value" [value]='Select'>
+              <option [value]="Select" disabled>Select</option>
+              <option [value]="divisionInfo" *ngFor="let divisionInfo of tableInfo.division">{{divisionInfo}}</option>
+            </select></td>
+          <td>
+            <input type="button" (click)="dataFinder()" value="Search">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="table-data">
+      <table>
+        <tr >
+          <th *ngFor="let item of tableHeader">
+            {{item}}
+          </th>
+        </tr>
+          <tr *ngFor="let item of presentTableData; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.school}}</td>
+            <td>{{item.class}}</td>
+            <td>{{item.division}}</td>
+            <td>{{item.status}}</td>
+            <td><span link='active' (click)="deleteData(i)"><u>delete</u></span> <a (click)="sendEditableData(item, i)"><u>edit</u></a></td>
+          </tr>
+      </table>
+    </div>
+    <div class="pagination">
+      <span>
+          &le; |
+          <label *ngFor="let item of numbers" (click)="showPaginatedData(item)">
+            <u>{{item}}</u> |
+          </label>
+           &ge;
+        </span>
+    </div>
+  </div>
+  <input type="button" (click)="generateExcelReport()" value="DownLoad Excel">
+</div>

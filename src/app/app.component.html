@@ -1,0 +1,8 @@
+<div class="top-content" *ngIf = "showNav">
+  <app-nav-component class="nav-bar" ></app-nav-component>
+</div>  
+<div class="main-content">
+  <app-side-bar class="side-bar"  *ngIf = "showSideBar"></app-side-bar>
+  <router-outlet ></router-outlet>
+</div>
+<!-- [currentLink]="currentPage" -->
